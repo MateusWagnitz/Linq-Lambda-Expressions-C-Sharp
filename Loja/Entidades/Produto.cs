@@ -19,7 +19,8 @@ namespace Loja.Entidades
             _produtos.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Morango", Quantidade = 4, Valor = 25, DataVencimento = DateTime.Now.AddDays(2) });
             _produtos.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Pera", Quantidade = 2, Valor = 12, DataVencimento = DateTime.Now.AddDays(3) });
             _produtos.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Abacaxi", Quantidade = 1, Valor = 4, DataVencimento = DateTime.Now.AddDays(4) });
-            _produtos.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Melão", Quantidade = 35, Valor = 5, DataVencimento = DateTime.Now.AddDays(6) });
+            //_produtos.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Melão", Quantidade = 35, Valor = 5, DataVencimento = DateTime.Now.AddDays(6) });
+            _produtos.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Melão", Quantidade = 35, Valor = 5, DataVencimento = DateTime.Now.AddYears(2) });
 
             return _produtos;
         }
