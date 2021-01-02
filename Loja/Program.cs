@@ -181,14 +181,15 @@ namespace Loja
 
             Console.WriteLine("----------------------------------------");
 
-            var resultado = from p in produtos
+            var resultado = (from p in produtos
                             group p by p.Categoria into grupo
                             select new RelatorioProdutoPorCategoria
                             {
                                 NomeDaCategoria = grupo.Key,
                                 ValorMinimo = grupo.Min(x => x.Valor),
                                 ValorMaximo = grupo.Max(x => x.Valor),
-                            };
+                                ValorTotal = grupo.Sum(x => x.Valor)
+                            }).OrderBy(x => x.NomeDaCategoria);
 
             resultado.ToList().ForEach(x =>
             {
@@ -209,6 +210,7 @@ namespace Loja
         public string NomeDaCategoria { get; set; }
         public decimal ValorMinimo { get; set; }
         public decimal ValorMaximo { get; set; }
+        public decimal ValorTotal { get; set; }
     }
 
     public class ProdutoSelecionado
