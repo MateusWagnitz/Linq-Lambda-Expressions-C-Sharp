@@ -167,39 +167,41 @@ namespace Loja
 
             //__________________________________________________________________________
 
-            var produtosFrutas = new Produto().ListarFrutas();
-            var produtosEletronicos = new Produto().ListarEletronicos();
+            //var produtosFrutas = new Produto().ListarFrutas();
+            //var produtosEletronicos = new Produto().ListarEletronicos();
 
-            var produtos = new List<Produto>();
-            produtos.AddRange(produtosFrutas);
-            produtos.AddRange(produtosEletronicos);
+            //var produtos = new List<Produto>();
+            //produtos.AddRange(produtosFrutas);
+            //produtos.AddRange(produtosEletronicos);
 
-            produtos.ForEach(x =>
-            {
-                Console.WriteLine(JsonConvert.SerializeObject(x));
-            });
+            //produtos.ForEach(x =>
+            //{
+            //    Console.WriteLine(JsonConvert.SerializeObject(x));
+            //});
 
-            Console.WriteLine("----------------------------------------");
+            //Console.WriteLine("----------------------------------------");
 
-            var resultado = (from p in produtos
-                            group p by p.Categoria into grupo
-                            select new RelatorioProdutoPorCategoria
-                            {
-                                NomeDaCategoria = grupo.Key,
-                                ValorMinimo = grupo.Min(x => x.Valor),
-                                ValorMaximo = grupo.Max(x => x.Valor),
-                                ValorTotal = grupo.Sum(x => x.Valor)
-                            }).OrderBy(x => x.NomeDaCategoria);
+            //var resultado = (from p in produtos
+            //                group p by p.Categoria into grupo
+            //                select new RelatorioProdutoPorCategoria
+            //                {
+            //                    NomeDaCategoria = grupo.Key,
+            //                    ValorMinimo = grupo.Min(x => x.Valor),
+            //                    ValorMaximo = grupo.Max(x => x.Valor),
+            //                    ValorTotal = grupo.Sum(x => x.Valor)
+            //                }).OrderBy(x => x.NomeDaCategoria);
 
-            resultado.ToList().ForEach(x =>
-            {
-                Console.WriteLine(JsonConvert.SerializeObject(x));
-            });
+            //resultado.ToList().ForEach(x =>
+            //{
+            //    Console.WriteLine(JsonConvert.SerializeObject(x));
+            //});
 
 
-            Console.ReadLine();
+            //Console.ReadLine();
 
-            //18:00
+            //__________________________________________________________________________
+
+
 
 
         }
